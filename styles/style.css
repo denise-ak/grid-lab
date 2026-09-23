@@ -5,10 +5,13 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    font-size: 0.8rem;
     background-color: #f4f7fb;
     color: #24324a;
 }
-
+p {
+    font-size: 0.7rem;
+}
 .container {
     max-width: 1100px;
     min-height: 100vh;
@@ -32,36 +35,32 @@ body {
 .header {
     grid-area: header;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 28px;
+    gap: 1.5rem;
     min-height: 190px;
-    padding: 36px;
+    padding: 2rem;
+    text-align: center;
     color: white;
-    background:#5b4bba;
+    background: #5b4bba;
     border-radius: 18px;
 }
 
 .header-content {
     flex: 1;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 18px;
-
-
-}
-.header-content:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(75, 63, 161, 0.3);
+    min-width: 0;
 }
 
 .header-image {
-    width: 30%;
-    flex: 0 0 30%;
+    width: 8rem;
     aspect-ratio: 1 / 1;
+    flex: 0 1 8rem;
+    max-width: 30%;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.7);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 .header-image:hover {
@@ -69,14 +68,11 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-
-
 .header p {
     margin-top: 10px;
     font-size: 1.1rem;
     opacity: 0.9;
 }
-
 .about {
     grid-area: about;
     padding: 28px;
@@ -312,7 +308,9 @@ body {
 
 
 @media (min-width: 48rem) {
-
+    p {
+        font-size: 1rem;
+    }
     .container {
         grid-template-columns: 3fr minmax(20%, 1fr);
         grid-template-areas:
@@ -323,19 +321,16 @@ body {
             "footer footer";
     }
     .header {
-        display: flex;
-        flex-direction: row;
-        text-align: left;
-        justify-content: space-between;
-        padding: 4%;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    padding: 4%;
     }
+
     .header-image {
-    width: 18%;
-    aspect-ratio: 1 / 1;
-    flex: 0 0 18%;
-    border-radius: 50%;
-    object-fit: cover;
-}
+        width: 9rem;
+        height: 9rem;
+    }
     
 
     .sidebar {
